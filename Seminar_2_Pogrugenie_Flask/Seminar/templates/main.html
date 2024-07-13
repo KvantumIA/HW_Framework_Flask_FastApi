@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Задача 1 - Кнопка</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_1}}</p>
+    </details>
+    <button type="submit">
+        <a href="{{ url_for('task1') }}">Нажми меня</a>
+    </button>
+</div>
+<br>
+<div>
+    <h2>Задача 2 - Загрузка изображения</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_2}}</p>
+        <img src="{{ img_url }}" alt="{{ img_url_name }}" width="150">
+    </details>
+    <a href="{{ url_for('task2') }}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 3 - Форма ввода</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_3}}</p>
+    </details>
+    <a href="{{ url_for('task3')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 4 - Количество слов</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_4}}</p>
+    </details>
+    <a href="{{ url_for('task4')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 5 - Калькулятор</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_5}}</p>
+    </details>
+    <a href="{{ url_for('task5')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 6 - Проверка возраста</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_6}}</p>
+    </details>
+    <a href="{{ url_for('task6')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 7 - Квадрат числа</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_7}}</p>
+    </details>
+    <a href="{{ url_for('task7')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 8 - Flash сообщение</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_8}}</p>
+    </details>
+    <a href="{{ url_for('task8')}}">Переход</a>
+</div>
+<br>
+<div>
+    <h2>Задача 9 - Cookie файлы</h2>
+    <details>
+        <summary>Подробности</summary>
+        <p>{{task_9}}</p>
+    </details>
+    <a href="{{ url_for('task9')}}">Переход</a>
+</div>
+{% endblock %}

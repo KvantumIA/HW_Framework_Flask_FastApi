@@ -1,0 +1,21 @@
+{% extends 'base_SQL_Alchemy.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% if users %}
+        {% for user in users %}
+            <p class="col-12 col-md-6">
+                Имя пользователя: {{ user.username }}
+                <br>
+                Email пользователя: {{ user.email }}
+            </p>
+        {% endfor %}
+        {% else %}
+            Пользователь, {{ username }}, не найден!
+        {% endif %}
+    </div>
+{% endblock %}

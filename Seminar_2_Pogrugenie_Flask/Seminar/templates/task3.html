@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <form action="/authorization/" method="post">
+        Логин <input type="text" name="auth_login" placeholder="Введите имя">
+        <br>
+        <br>
+        Пароль <input type="password" name="auth_password" placeholder="Введите пароль">
+        <br>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<form action="/name/" method="post">
+
+    <div>
+        <form action="/name/" method="post">
+            <input type="text" name="name" placeholder="Введите имя">
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+    <br>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</form>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <form action="/sum/" method="post">
+        <input type="number" name="num1" placeholder="Введите число 1">
+
+        <label for="options">Выберите операцию: </label>
+        <select name="options" id="options">
+            <option value="option1">сложение</option>
+            <option value="option2">вычитание</option>
+            <option value="option3">умножение</option>
+            <option value="option4">деление</option>
+        </select>
+        <input type="number" name="num2" placeholder="Введите число 2">
+
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+{% endblock %}
+

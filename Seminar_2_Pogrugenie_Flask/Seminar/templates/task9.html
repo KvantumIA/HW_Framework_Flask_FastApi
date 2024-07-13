@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<form action="/getcookie/" method="post">
+    <div>
+        <form action="/getcookie/" method="post">
+            <input type="text" name="username" placeholder="Введите имя">
+            <input type="email" name="email" placeholder="Введите Email">
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</form>
+{% endblock %}
+

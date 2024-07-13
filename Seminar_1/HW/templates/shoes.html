@@ -1,0 +1,22 @@
+{% extends 'base_hw.html' %}
+
+{% block title %}
+        {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+{% if product %}
+{% for item in product %}
+    <div class="product">
+        <img src={{item.images}} alt={{item.name}}>
+        <h2>{{item.name}}</h2>
+        <p>Цена: {{item.price}} руб.</p>
+        <p>Описание: {{item.description}}</p>
+        <div class="clear"></div>
+    </div>
+
+{% endfor %}
+{% else %}
+Страница не заполнена
+{% endif %}
+{% endblock %}

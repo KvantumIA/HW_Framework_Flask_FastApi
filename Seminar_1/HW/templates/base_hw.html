@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>
+        {% block title %}
+        Мой сайт
+        {% endblock %}
+    </title>
+</head>
+<body>
+<div class="container-fluid">
+    <ul class="nav nav-pills justify-content-end align-items-end">
+        <li class="nav-item"><a href="/main/" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="/clothes/" class="nav-link">Одежда</a></li>
+        <li class="nav-item"><a href="/shoes/" class="nav-link">Обувь</a></li>
+        <li class="nav-item"><a href="/jackets/" class="nav-link">Куртки</a></li>
+    </ul>
+    <div class="products">
+        {% block content %}
+        Страница не заполнена
+        {% endblock %}
+    </div>
+
+</div>
+<div class="row fixed-bottom modal-footer">
+    <hr>
+    <p>Все права защищены &copy;</p>
+</div>
+</body>
+</html>
