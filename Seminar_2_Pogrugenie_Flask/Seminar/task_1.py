@@ -208,7 +208,7 @@ def task9():
 @app.route('/task9_answer/')
 def task9_answer():
     if 'name_cookie' in session:
-        return render_template('task9_answer.html', name=session['name_cookie'], **CONTEXT)
+        return render_template('task9_answer.html', my_name=session['name_cookie'], **CONTEXT)
 
 
 @app.route('/logout/')
