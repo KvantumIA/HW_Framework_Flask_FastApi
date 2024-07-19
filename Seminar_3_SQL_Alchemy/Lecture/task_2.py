@@ -25,7 +25,8 @@ def fill_tables():
         author = User.query.filter_by(username=f'user{post %
                                                       count + 1}').first()
         new_post = Post(title=f'Post title {post}',
-                        content=f'Post content {post}', author=author)
+                        content=f'Post content {post}',
+                        author=author)
         db.session.add(new_post)
     db.session.commit()
 

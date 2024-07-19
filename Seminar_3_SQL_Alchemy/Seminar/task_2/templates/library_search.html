@@ -1,0 +1,16 @@
+{% extends 'base_task_2.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for item in search %}
+    <div>
+        <h3>Название: {{item.name}}</h3>
+        <p>Дата выпуска: {{item.age}}</p>
+        <p>Количество: {{item.count}}</p>
+        <p>Автор: {{item.author}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

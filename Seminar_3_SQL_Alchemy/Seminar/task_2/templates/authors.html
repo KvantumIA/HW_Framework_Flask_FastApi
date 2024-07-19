@@ -1,0 +1,22 @@
+{% extends 'base_task_2.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for item in author %}
+    <div>
+        <h4>Имя: {{item.first_name}}, Фамилия: {{item.last_name}}</h4>
+        {% if library %}
+            Книги: <br>
+            {% for book in library %}
+                {% if item.id == book.id_author %}
+                    Название - {{ book.name }}, дата выпуска - {{book.age_create}}.<br>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    {% endfor %}
+{% endblock %}

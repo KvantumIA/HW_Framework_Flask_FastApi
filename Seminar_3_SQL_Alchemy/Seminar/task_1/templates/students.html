@@ -1,0 +1,28 @@
+{% extends 'base_task_1.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for user in student %}
+            <p class="col-12 col-md-6">
+                Фамилия, Имя: {{ user.last_name }} {{ user.first_name }}
+                <br>
+                Возраст: {{ user.age }}
+                <br>
+                Пол: {{ user.sex }}
+                <br>
+                Группа: {{ user.group }}
+                <br>
+                Факультет:
+                {% for faculty in faculties %}
+                    {% if user.id_faculty == faculty.id %}
+                        {{ faculty.name }}
+                    {% endif%}
+                {% endfor%}
+            </p>
+        {% endfor %}
+    </div>
+{% endblock %}

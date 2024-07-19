@@ -31,7 +31,7 @@ def len_str(text: str) -> str:
 
 @app.route('/index/')
 def first_page():
-    return render_template('index.html')
+    return render_template('main.html')
 
 
 @app.route('/student/')
@@ -49,7 +49,7 @@ def second_page():
                 'birthday': '02.02.1991',
                 'average_score': 8}]
     context = {'students': student}
-    return render_template('index.html', **head, **context)
+    return render_template('main.html', **head, **context)
 
 
 @app.route('/news/')

@@ -1,0 +1,17 @@
+{% extends 'base_task_1.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for key, task in tasks.items() %}
+    <div>
+        <h2>{{key}}</h2>
+        <details>
+            <summary>Подробности</summary>
+            <p>{{task}}</p>
+        </details>
+    </div>
+    {% endfor %}
+{% endblock %}

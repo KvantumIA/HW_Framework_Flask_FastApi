@@ -1,0 +1,17 @@
+{% extends 'base_task_2.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for item in library %}
+    <div>
+        <h3>Название: {{item.name}}</h3>
+        <p>Дата выпуска: {{item.age_create}} <br>
+        Количество: {{item.count}}<br>
+        Автор: {{item.id_author}}</p>
+    </div>
+    <br>
+    {% endfor %}
+{% endblock %}
