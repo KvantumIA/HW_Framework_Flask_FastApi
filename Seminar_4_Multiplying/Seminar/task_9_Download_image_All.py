@@ -36,9 +36,9 @@ def download_stream(url, path):
     print(f"Downloaded {url} in {time.time() - start_time:.2f} seconds")
 
 
-async def download_asyncio(url):
+async def download_asyncio(url, path):
     response = requests.get(url)
-    filename = 'image/' + url.split('?')[0].split('/')[-1]
+    filename = f'{path}/' + url.split('?')[0].split('/')[-1]
     with open(filename, "wb") as f:
         f.write(response.content)
     print(f"Downloaded {url} in {time.time() - start_time:.2f} seconds")
@@ -47,7 +47,7 @@ async def download_asyncio(url):
 async def main(path, urls_):
     tasks = []
     for url in urls_:
-        task = asyncio.ensure_future(download_asyncio(url))
+        task = asyncio.ensure_future(download_asyncio(url, path))
         tasks.append(task)
     await asyncio.gather(*tasks)
 
