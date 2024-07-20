@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4PDA .:. Всё в порядке, но...</title>
+<meta charset="utf-8" />
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	line-height: 1.5em;
+}
+
+html {
+	height: 100%;
+}
+body {
+	font-family: "Segoe UI", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+	background: #e6e7e9;
+	height: 100%;
+}
+
+.tbl {
+	display: table;
+	width: 100%;
+	list-style: none;
+}
+.tbl > li {
+	display: table-cell;
+	list-style: none;
+	vertical-align: middle;
+}
+
+.main {
+	height: 100%;
+	padding: 0 0 84px;
+}
+.footer {
+	font-size: 11px;
+	line-height: 18px;
+	padding: 24px 12px;
+	height: 84px;
+	margin: -84px 0 0;
+	text-align: center;
+}
+.holder {
+	padding: 24px;
+}
+.content {
+	max-width: 1196px;
+	margin: 0 auto;
+	width: 100%;
+	border: 1px solid #ccc;
+	background: #FFF;
+}
+.head {
+	color: #FFF;
+	background: #0072bc;
+	padding: 12px 24px;
+}
+.head .title {
+	float: right;
+}
+.head,
+.head * {
+	line-height: 1em !important;
+}
+.logo {
+	background: url(data:image/png;base64,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) center center no-repeat;
+	width: 128px;
+	height: 36px;
+	display: inline-block;
+	color: transparent;
+	text-indent: -100%;
+	vertical-align: middle;
+	overflow: hidden;
+}
+h1 {
+	font-size: 32px;
+	font-weight: normal;
+}
+h2 {
+	font-size: 28px;
+	font-weight: normal;
+}
+h1, h2 {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+hr {
+	border: none;
+	border-top: 1px solid #ccc;
+	height: 1px;
+	margin: 24px 0;
+}
+.captcha {
+	margin: 12px 0;
+}
+</style>
+<meta http-equiv="refresh" content="390">
+</head>
+<body>
+
+<ul class="tbl main"><li class="holder"><div class="content">
+
+	<ul class="tbl head">
+		<li>
+			<a href="http://4pda.to/" title="4PDA"><span class="logo">4PDA</span></a>
+			<h1 class="title">Кто здесь?</h1>
+		</li>
+	</ul>
+	<div class="holder">
+		<h1>Все в порядке, но...</h1>
+		в целях обеспечения безопасности ресурса нам необходимо убедиться, что вы человек.<br />
+
+		<div class="captcha">
+			<form id="challenge-form" class="challenge-form"><div id="cf-please-wait"><div id="spinner"><div id="cf-bubbles"><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div></div></div><p id="cf-spinner-please-wait"></p><p id="cf-spinner-redirecting" style="display:none"></p></div><noscript id="cf-captcha-bookmark" class="cf-captcha-info"><h1 style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript><div id="no-cookie-warning" class="cookie-warning" style="display:none"><p style="color:#bd2426;">Please enable Cookies and reload the page.</p></div></form><script>(function(){window._cf_chl_opt={cvId: '3',cZone: "4pda.to",cType: 'managed',cNounce: '35087',cRay: '8a5f63297f91a027',cHash: '17e299e74b6556d',cUPMDTk: "\/?__cf_chl_tk=DEmewTcvhNrPXkcdbIuO7.j_YXjTgR_0DwLBLesmTNg-1721441138-0.0.1.1-3668",cFPWv: 'b',cTTimeMs: '1000',cMTimeMs: '390000',cTplV: 1,cTplB: 'cf',cK: "",fa: "\/?__cf_chl_f_tk=DEmewTcvhNrPXkcdbIuO7.j_YXjTgR_0DwLBLesmTNg-1721441138-0.0.1.1-3668",md: "GnmuaHctIFi_kK3gXgsOVaVKqZUlGjfwKosxuuqt6IQ-1721441138-1.1.1.1-1N3jf25v8DPnqTPKBsyA64tv6aR8Hx.FkT.wSY3Xo96hjuLrton7I_OB1Z3gO.l7KGTkMDI.61fpAWYayXd8XSbIoiUj4Mcmm4ThgRxcKnoLrVZzTBRpKO6cLfZ2i3qcKGE.uP4H1vAznn54w6RzVRjfEqYQc8ZXh_Hm1kZ5ELXV1eb2xxUDHbSWEyXwgPqTfLhXEqN0N0QyeMYthKlRnLHuG6smOMd9FFvUkf7JJcrB31M5aG09Ba.Oxn9B_uCb3sONPJrmNp23vZ_BJUMugTAwp_T_ivgFr1IUUriR9AchHf3kUBzzk5epp0kXX2wiDrAbsbtfPkSYrSd9pp.mHukFYJFclMMdZRkbC61voSZKHPTWhsPsIla.M_digkvjorZkQ97YB0WWwPM4neoIphfpuMhFirdcuCRJBlI7sd79bWADKISWEck1UQkiMcGfWVT6Q.3iRwrE2.SmLsK_5ucTKa2a3meVZb8gzJWypLjA5sth_PUDonhdE.F9i8Y6yu1Azob3IzD1amt8xBP9zuy02k33c1CpC69wdg5pTJvgHZVLB__MzrW.ympPl1I9D7EHTW4Otawxp4mBwsGdHsVMgjrvPNh5vBvJVj8enqZrymdgkE6Lh681NfL4eSt0i3slXFP.fJhiBmt_ljXtIZ6yj.a6Oto5XD9kdF1LWn7ObexBHdfoiERRi7MGlzU0i.oJOyl13EidHG2mHY5REQ4rWUvVTYmGXqVhDXFHkdQH5pYzy0Y6xNeqHYfpZCwsWc.IvliRCCwR2BQpv6cNPII7l_99Rph1I5OEYtgDHWJ8guFIjzBZxyeLdAw3PxEsOgOLJajlXwD89d3_jSZ2_4TGaOU9FjKVVufxjKvtKXBV5ODundQIBS4I9sd87Lb5W1k1Hx95A7f9p6_by1FJ4JmqOE0Q.BoYRPQoofK3i1trLcq1dy.3YlhURz9bcMxwn8ax6RwU2F5kUAKIbAhUHDEAdDrE8qNpNGssIdRSw90LRTw2v3QzQehUWYBFN4CAkVNEFV9MzjhvzUD7rfHDFbW6oSNaMtwMTe1vrWNwuZ6OI3hGFZLx2bcBsLflwrq4ykHkj75BYDAm31F44KKRpHP7pqzDOrhsB7COP7fu0g7ofN7xrsIOMLF8Ub.PBS9rYtt5udRkOaSZrofh2fd8KL2mdLlon0Bmv13oxWp1j61i.Y4OrCEaa8PDIjuVvdNwDt6k7batKoIMJNtfhW2AiEQXTWWQ5pnPVRl3acghWPXWd6FCTfXH5mY4PD33BIrb7eOJR5kREqmG4kUegzreq81kG0I7m.PlWLmj.d2QGtZzgSjOICTJ38vhHZOjBqI14IvlGCPG2j550G_exHTG2vYfjph2yFiNC5sJWjDBtg7tzwNEPe16gGn3xKeRZXbztAGBW3lOzXavfrNyftxQQA",mdrd: "mynzZZo4SQgEDGDC6NxJ4FNIvmIYYmr62XkNJkFEAxU-1721441138-1.1.1.1-Y2euRCzTALcBtRLiq2CR2WglCJ7Q1qFuh4A8E1xZ8Ejkcj3DgAJox_nTSa_n7F0ehj1BGh2_XaA3PC_JfPUN1MXEuIgUXZOKQmrb1buI3aFF_qlYZaPZxJ5VXoCsbIqkt9CrP0VX976OxYNuBIq6QAwu5nryd4apEXq_7FJq4qRiCVcpFvbJSgkhLjT1e7C9rkAohsHWm5nhguwG8hjBises3EusjMJ0lkWLvviW2Ol60_3U1yLo1c2oOp7Me7gwHT9UXd18X6kGkpCujAVax5W960UsMQs27eIU87KSsz39RVKC263uH6R7Uh87rlLOxLxse7VU2NNVLzd.DADfIBuQReTx3rM_4a7.uJMjGy6ppEVoM1taM57q93CTzcT9XbCdjJqW73c5G879KqT8I7CIS8rTxug6oMiknRMZk_zTAMeAvLvkbm2E32lrGJMxBBoKNTHhLB4CoACcVAdNl_DxKq3dqh.PYk__jvlfQZlncap7wbpryQWaBNRrtc5z8my0uE5ixZD760PXqbq1Zl8rL6Pcb7dXdtSEcpcaEULN6euQ8TJtfrG7PejrZxikwYadp5tN3QTQW80ytU73lXTV7XjjzxvoedkqNapcdSY5Hx2.bqAgwCnE_GPc1Bjp5Dr.s3jlg3HyAa.uo1khwzcVczrz39KYViA6.4JyNlDz9tOro9UGHTMH.IzfAbXiW13EbqQLM8z.H0UZYK4LvFYNlpm5s_XRsp2lao8wcmT9Da84UQ_4BAR78.eY6GQ_faK4PYgmwbUXWpnkj80NlQU.FtAdFNbLwcT_4kip5kfAPBLpeon2nEQD1KBM1vQ5JmpHRzZpyNID1SsoLWd8LL6.DNYUyvtCqHvsKKb4NBScroG4SlA2QGK2GIXRMhg5gG046idXLyII_9LRgqoHzPrhxy3N7rlDcvoCUsz8mwgNETa8GojyLLlxTegKoU58qq6qlmxXYJ.EoRQTQi9Gc1G8Po_had9A5JjPbNgP1o4dlR6ZIRs.bbU8g0..6ffalxWTbY_Q8E6zhxzRdC2x7Pj_OkWuP_mpLw1Z0ShD6A5dhgJCMpJ2FFtX29nCSDywsFObfWqg_ciXNJBY5QzAVHlQ4CoHZkIE3yXcr_tFGyjRPwHln5YJ3MDWAOn5GWLgsuRYSJ910RiDMD4.BpceKoIHu8kl7VYhRVDtwwFKirlwU6TwHydpuQPgUNHjpyPXwUGQQDa6qpUYS86jDO7E8VLV4sNfhrMZtGvCApwueuN6ULb7T1TrdNkVwd6ldtPhXL9SOnGCrtQgLR1zf_hIG3rG3ztb1TFj.UVsMRtSpvcOXe0AIZDu2Da56qs9b6hcd_QnYiOfekFYkcRQNSRzQ97TKJ5HOjdsWr3MwCR1_O8HEJXhMJJ8LLzIwyyP1_uZZ7Z4iE_pezn8sJ2ODcQCURoKpUYt3P2138ZBHAU7kjTbmchDoyG2PpE4U3OEXfzJl6utl.VhxelyQ.FnGvqnjQYlrXjucvqzed9b7wx7R3n7nYiynj6GHUlSblEi.i07JtcyKnnJxKe3zysIwVHKGcfVHlp_c7G4PFqQ.1cC_6mXmj2vR5wXJIm08Nc.yZYN7Yazaf0rfdAwTUm0SCMDvdAYVjOwV9B82tar5CzqOiJ7xbm.Fa2ezTPIpvmjWlTIm3_9fIhiCnlJUAU4Q9fAFhUDXDrnbTJi2TdSPV2KUB8pTSmJyjGEAUra6anQM0aitJMv1G_9P.V0WhqffAeAT4lut9Wlx8k_jIFOVvy3caE8vElpbmvHKRadgsLSA9EIiP.ViBpzzVwc3c4gJ0y_1yl1kd4Sp8xfdWAJ8B9pX7VVXXzOHnK9KTffOymJR58Ybqw7VFmAPwHTJ_7oDsXSB6QlFAM2xfFEEpQV.CQ8rV2dm.NdOYuRvs6GyJJJkxVMtAX00vhi5AwO37NDBfGnms20pIyI_2EtF7NtdTpm9lQ6jWUBILSl8CaKKFwWFKW9Q4OM.kkBvwVU06LFtYN7OEOHsHDtpQfFHsIccDce6.wiiVs33X.kEaVPnRv3I6bCP3IKQXFCg_muLaIPIOxOhk8vQiZrGJNHRfsxGjtl0orDGKH.X0tnFZiuCOfdfpxE",cRq: {ru: 'aHR0cHM6Ly80cGRhLnRvLw==',ra: 'cHl0aG9uLXJlcXVlc3RzLzIuMzIuMw==',rm: 'R0VU',d: 'ZKdQBO+nUrSKpq/3tusySrXPKFIUEU2uhPBzGzzSLs0Fr3i2tYtjxiz3G/9cwqkaEcVJA0OneTUg0HCQ65CSWBV1QvmL0GNLHBIg0P23JtSrAXo/Jz/XN1t5tsTvFoGA8T4EmnamivKJVTK0WbC9TFCdrvISFUK6LNrH+ZD3EOjRoIzxX7G7BViK8NimGLLwBFsFjBgNeWrnVmWuSe7lDKRXX7lwty+AD0MV5lTuakmX8CLHtTWqP8q3mVBKRC+F2ULdqcf6J1zzGNO1n0t5x230UOvl8SdGPmqmP4Yor+K3/qaurIwx1s1/4q9E4itwGtdpoVCenyoyWTqgdfwxXtH5HFr7ZCwCo3EPzWfQ/EJ9eIvMiNyHRfVFXtN6xm0N5u6+JyFqwChAUiL5UN9o5l/alWikD9rVAJwwTH70uCp30dl41kxqiZu8UBtqrUqAVAlULihp/maIvU+/tOhxwdI1HY2H5YdxPDioirnCHhxNS5tPGsIRUkGwqr2FsHGg4ndaHSkkZz0pF38iaXtRSw==',t: 'MTcyMTQ0MTEzOC4wMDAwMDA=',cT: Math.floor(Date.now() / 1000),m: '2NA7cQHG/C90Lz2oGWXRHsNjJrYkLwKP0zRY0OliduI=',i1: 'lbzmqGsU68XOZFWm0/yF8w==',i2: 'u/6UYDSVW0m2424xXGJYlg==',zh: '1ShkjbsOv+i+xIK6YgPGtqCVGId3FYCSBcGI52MnCZQ=',uh: 'CiATXs0R4tTCmAZrIKJMI0mbciEXZbJB6weC9NLv1LY=',hh: 'Wab0VA73pZEw/zvnNZTNIGinRN54k+Twr9R0vuxVAKU=',}};var cpo = document.createElement('script');cpo.src = '/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=8a5f63297f91a027';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null, "\/?__cf_chl_rt_tk=DEmewTcvhNrPXkcdbIuO7.j_YXjTgR_0DwLBLesmTNg-1721441138-0.0.1.1-3668" + window._cf_chl_opt.cOgUHash);cpo.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(cpo);}());</script>
+		</div>
+
+		<hr />
+
+		<h2>Что случилось?</h2>
+		<small>
+		Этот текст мало кто будет читать и мы можем написать здесь все, что угодно, например...<br />
+		Вы живете в неведении. Роботы уже вторглись в нашу жизнь и быстро захватывают мир, но мы встали на светлый путь и боремся за выживание человечества. А если серьезно, то...<br />
+		<br />
+		В целях обеспечения безопасности сайта от кибератак нам необходимо убедиться, что вы человек.  Если данная страница выводится вам часто, есть вероятность, что ваш компьютер заражен или вы используете для доступа IP адрес зараженных компьютеров.<br />
+		<br />
+		Если это ваш частный компьютер и вы пытаетесь зайти на сайт, например, из дома - мы рекомендуем вам проверить ваш компьютер на наличие вирусов.<br />
+		<br />
+		Если вы пытаетесь зайти на сайт, например, с работы или открытых сетей - вам необходимо обратиться с системному администратору и сообщить, что о возможном заражении компьютеров в вашей сети.
+		</small>
+	</div>
+
+</div></li></ul>
+
+<ul class="tbl footer">
+	<li>&copy; 2005-2024, &laquo;4PDA&raquo;. 4PDA&reg; - зарегистрированный товарный знак.</li>
+</ul>
+
+</body>
+</html>
