@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - Главная
+{% endblock %}
+
+{% block content %}
+    {% if message %}
+        {{message}}
+    {% endif %}
+{% endblock %}
