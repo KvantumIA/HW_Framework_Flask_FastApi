@@ -2,7 +2,7 @@ from flask import Flask
 from Seminar_3_SQL_Alchemy.Lecture.models import db, User, Post, Comment
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.database'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@hostname/db_name'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://username:password@hostname/db_name'
 
@@ -14,7 +14,7 @@ def index():
     return 'Hi!'
 
 
-@app.cli.command("init-db")
+@app.cli.command("init-database")
 def init_db():
     db.create_all()
     print('OK')

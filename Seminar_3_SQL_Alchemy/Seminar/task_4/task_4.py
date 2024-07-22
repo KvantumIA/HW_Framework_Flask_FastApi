@@ -9,12 +9,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_hex()
 csrf = CSRFProtect(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/task_4_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/task_4_db.database'
 
 db.init_app(app)
 
 
-@app.cli.command("init-db")
+@app.cli.command("init-database")
 def init_db():
     db.create_all()
     print('OK')

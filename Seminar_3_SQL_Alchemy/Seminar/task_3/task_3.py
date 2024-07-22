@@ -31,18 +31,18 @@ TASK = {
     'Задание №8.': 'Создать форму для регистрации пользователей на сайте. Форма должна содержать поля "Имя", "Фамилия", "Email", "Пароль" и кнопку "Зарегистрироваться". При отправке формы данные должны сохраняться в базе данных, а пароль должен быть зашифрован.', }
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/student_task_3_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/student_task_3_db.database'
 
 db.init_app(app)
 
 
-@app.cli.command("init-db")
+@app.cli.command("init-database")
 def init_db():
     db.create_all()
     print('OK')
 
 
-@app.cli.command("fill-db")
+@app.cli.command("fill-database")
 def fill_tables():
     # Добавляем студентов
     count = 5

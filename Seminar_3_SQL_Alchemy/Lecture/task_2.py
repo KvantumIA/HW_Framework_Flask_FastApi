@@ -2,7 +2,7 @@ from flask import Flask
 from Seminar_3_SQL_Alchemy.Lecture.models import db, User, Post, Comment
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.database'
 
 db.init_app(app)
 
@@ -12,7 +12,7 @@ def index():
     return 'Hi!'
 
 
-@app.cli.command("fill-db")
+@app.cli.command("fill-database")
 def fill_tables():
     count = 5
     # Добавляем пользователей

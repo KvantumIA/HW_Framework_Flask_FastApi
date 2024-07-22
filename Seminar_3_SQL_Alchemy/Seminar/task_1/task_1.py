@@ -33,12 +33,12 @@ TASK = {
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/student_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/student_db.database'
 
 db.init_app(app)
 
 
-@app.cli.command("init-db")
+@app.cli.command("init-database")
 def init_db():
     db.create_all()
     print('OK')
@@ -56,7 +56,7 @@ def random_date():
     return random_date
 
 
-@app.cli.command("fill-db")
+@app.cli.command("fill-database")
 def fill_tables():
     # Добавляем факультеты
     faculties = {

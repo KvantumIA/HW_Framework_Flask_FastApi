@@ -3,18 +3,18 @@ from Seminar_3_SQL_Alchemy.Seminar.task_2.models_library import db_library, Auth
 import random
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/library_db.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../../instance/library_db.database'
 
 db_library.init_app(app)
 
 
-@app.cli.command("init-db-library")
+@app.cli.command("init-database-library")
 def init_db():
     db_library.create_all()
     print('OK')
 
 
-@app.cli.command("fill-db-library")
+@app.cli.command("fill-database-library")
 def fill_tables():
     count = 5
     # Добавляем Авторов
