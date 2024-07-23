@@ -1,10 +1,9 @@
 import databases
 import sqlalchemy
-from Seminar_6_Additional_opportunities_FastApi.HW.settings.settings import settings
-from Seminar_6_Additional_opportunities_FastApi.HW.model.models_orders import Status
+from settings.settings import settings
+from model.models_orders import Status
 
 DATABASE_URL = settings.DATABASE_URL
-# DATABASE_URL = 'postgresql://user:password@localhost/dbname'
 
 database = databases.Database(DATABASE_URL)
 metadata = sqlalchemy.MetaData()

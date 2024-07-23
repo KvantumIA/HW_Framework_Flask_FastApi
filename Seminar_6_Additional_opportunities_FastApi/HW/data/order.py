@@ -1,10 +1,8 @@
 import random
 from typing import List
 from fastapi import APIRouter, HTTPException
-from Seminar_6_Additional_opportunities_FastApi.HW.database.db import database, \
-    orders, users, products
-from Seminar_6_Additional_opportunities_FastApi.HW.model.models_orders import \
-    Order, OrderIn, Status
+from database.db import database, orders, users, products
+from model.models_orders import Order, OrderIn, Status
 from sqlalchemy import select
 
 router_order = APIRouter()

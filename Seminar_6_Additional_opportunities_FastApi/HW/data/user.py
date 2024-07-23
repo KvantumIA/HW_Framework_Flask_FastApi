@@ -1,9 +1,7 @@
 from typing import List
 from fastapi import APIRouter
-from Seminar_6_Additional_opportunities_FastApi.HW.database.db import database, \
-    users
-from Seminar_6_Additional_opportunities_FastApi.HW.model.models_user import \
-    User, UserIn
+from database.db import database, users
+from model.models_user import User, UserIn
 
 router = APIRouter()
 

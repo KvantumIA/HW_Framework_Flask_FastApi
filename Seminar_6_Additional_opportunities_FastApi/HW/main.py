@@ -1,9 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
-from Seminar_6_Additional_opportunities_FastApi.HW.database.db import database
-from Seminar_6_Additional_opportunities_FastApi.HW.data import user, product, order
+from database.db import database
+from data import user, product, order
+from settings.settings import settings
 
 app = FastAPI()
+HOST = settings.HOST
+PORT = settings.PORT
 
 
 @app.on_event('startup')
@@ -23,7 +26,7 @@ app.include_router(order.router_order, tags=['orders'])
 if __name__ == '__main__':
     uvicorn.run(
         'main:app',
-        host='127.0.0.1',
-        port=8080,
+        host=HOST,
+        port=PORT,
         reload=True
     )

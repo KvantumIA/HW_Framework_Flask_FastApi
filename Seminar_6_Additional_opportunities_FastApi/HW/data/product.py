@@ -1,10 +1,8 @@
 import random
 from typing import List
 from fastapi import APIRouter
-from Seminar_6_Additional_opportunities_FastApi.HW.database.db import database, \
-    products
-from Seminar_6_Additional_opportunities_FastApi.HW.model.models_products import \
-    Product, ProductIn
+from database.db import database, products
+from model.models_products import Product, ProductIn
 
 router_product = APIRouter()
 
